@@ -1,0 +1,25 @@
+{% extends 'MyPolls/layout.html' %}
+
+{% block content %}
+        <h1>
+            <p align="center" style="color:#DC143C; font-size:25px">
+            {{ question.question_text }}
+        </h1>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <form action="{% url 'MyPolls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+                <p align="left" style="color:black; font-size:20px">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                <a style="font-size:13px; color:blue" onclick="document.location='../../MyPolls/{{ choice.id }}/update_choice'">Редактировать ответ</a>
+                <a style="font-size:13px; color:red" onclick="document.location='../../MyPolls/{{ choice.id }}/delete_choice'">Удалить ответ</a>
+            {% endfor %}
+                <br><input type="submit" class="btn btn-success" style="width:300px" value="Ответить">
+                    <p align="left">
+                <a class="btn btn-info" href="{% url 'MyPolls:index' %}">Назад</a>
+                <a class="btn btn-warning" onclick="document.location='update'">Редактировать</a>
+                <a class="btn btn-danger" onclick="document.location='delete'">Удалить</a>
+        </form>
+{% endblock %}

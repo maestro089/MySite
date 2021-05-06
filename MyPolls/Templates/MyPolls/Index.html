@@ -1,0 +1,29 @@
+{% extends 'MyPolls/layout.html' %}
+{% block content %}
+
+    <div class="INDEX">
+        <h1>
+            <p align="center" style="color:#DC143C; font-size:35px">
+            Questions list
+        </h1>
+        <h2>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+               <p align="left" style="color:#DC143C; font-size:35px">
+               <p><li><a href="{% url 'MyPolls:detail' question.id %}">{{ question.question_text }}<br></a></li></p>
+            {% endfor %}
+            </ul>
+
+            <h3>
+                <button class="btn btn-success" style="height:40px;width:150px" onclick="document.location='create'">Создать опрос</button>
+                <button class="btn btn-success" style="height:40px;width:150px" onclick="document.location='create_choice'">Создать ответ</button>
+            </h3>
+
+            {% else %}
+        </h2>
+            <p>No polls are available.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

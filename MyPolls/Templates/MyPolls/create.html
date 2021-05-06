@@ -1,0 +1,14 @@
+{% extends 'MyPolls/layout.html' %}
+{% block title %}Создание Блога{% endblock %}
+{% block content %}
+<div class="features">
+    <h1>Создание Опроса</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.question_text }}<br>
+        {{ form.pub_date }}<br>
+        <span>{{ error }}</span><br>
+        <button class="btn btn-success" type="submit">Добавить опрос</button>
+    </form>
+</div>
+{% endblock %}

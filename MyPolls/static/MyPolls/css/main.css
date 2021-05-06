@@ -1,0 +1,64 @@
+body {
+    background: #85CFE3;
+}
+
+aside {
+    float: left;
+    background: #31A7C8;
+    width: 20%;
+    padding: 2%;
+    height: 100vh;
+    color: black;
+    border-right: 5px solid;
+}
+
+aside img {
+    width: 230px;
+    float: left;
+}
+
+aside .django {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+aside ul{list-style: none}
+aside ul li {
+    color: black;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #FFCC37;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+    width: 80%;
+}
+
+main .INDEX {
+    color: #e8c5c5;
+    margin-left: 350px;
+    width: 75%;
+}
+
+form {
+    margin-left: 21%;
+    width: 700px;
+    margin-top: 50px;
+}
+

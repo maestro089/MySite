@@ -1,0 +1,25 @@
+{% extends 'MyPolls/layout.html' %}
+
+{% block content %}
+<div class="INDEX">
+     <h1>
+        <p align="center" style="color:#DC143C; font-size:35px">
+        Блоги
+    </h1>
+     <h2>
+        {% if latest_blog_list %}
+            <ul>
+            {% for blog in latest_blog_list %}
+               <p align="left" style="color:#DC143C; font-size:35px">
+               <p><li><a href="{% url 'MyBlogs:detail' blog.id %}">{{ blog.title }}<br></a></li></p>
+            {% endfor %}
+            </ul>
+        {% else %}
+             <p>No blogs are available.</p>
+        {% endif %}
+     </h2>
+    <h4>
+<button class="btn btn-success" style="height:40px;width:140px" onclick="document.location='create'">Создать блог</button>
+    </h4>
+</div>
+{% endblock %}

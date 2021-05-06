@@ -1,0 +1,14 @@
+{% extends 'MyPolls/layout.html' %}
+{% block title %}Создание Блога{% endblock %}
+{% block content %}
+<div class="features">
+    <h1>
+        Удаление опроса<br>
+        Хотите удалить этот Опрос?
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Удалить опрос</button>
+    </form>
+</div>
+{% endblock %}

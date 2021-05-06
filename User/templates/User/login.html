@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'MyPolls/static/MyPolls/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body style="background-color: #ceefff">
+ <form method="post">
+    <h2>
+        <p align="center" style="font-size: 40px; margin-top: 100px">
+        Log in
+        <div align="center" style="font-size: 20px; margin-top: 100px">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input class="btn btn-info" type = "submit" value="Log in">
+        </div>
+    </h2>
+     <h3>
+            <p align="center"  style="font-size: 1px; margin-top: 315px">
+            .
+        </h3>
+ </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'MyPolls/layout.html' %}
+
+{% block content %}
+
+  <style>
+       BODY
+       {
+        background-oolor:#ceefff ;
+       }
+  </style>
+    <div class="features">
+        <h2>
+            <p style="color:#DC143C; font-size:50px">
+            Главная страница
+        </h2>
+        <h3>
+            <p style="color:black; font-size:25px">
+            Что вы хотите сделать?<br>
+        </h3>
+        <h4>
+            <p style=" font-size:15px">
+            <button class="btn btn-outline-warning" style="height:100px;width:400px" onclick="document.location='MyPolls'">Опрос</button>
+            <button class="btn btn-outline-warning" style="height:100px;width:400px" onclick="document.location='MyBlogs'">Блог</button>
+        </h4>
+    </div>
+{% endblock %}

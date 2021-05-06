@@ -1,0 +1,21 @@
+{% extends 'MyPolls/layout.html' %}
+
+{% block content %}
+    <h1>
+        <p align="center" style="color:#DC143C; font-size:25px">
+        {{ question.question_text }}
+    </h1>
+<div class="INDEX">
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>
+            <p align="left" style="color:#DC143C; font-size:15px">
+            {{ choice.choice_text }} ---- {{ choice.votes }} vote{{ choice.votes|pluralize }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a class="btn btn-warning" href="{% url 'MyPolls:detail' question.id %}">Ответить заново</a>
+    <a class="btn btn-warning" href="{% url 'MyPolls:index' %}">Назад</a>
+</div>
+{% endblock %}

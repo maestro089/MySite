@@ -1,0 +1,67 @@
+{% extends 'MyPolls/layout.html' %}
+
+{% block content %}
+        <style>
+           figure {
+                height: 595px;
+                margin: 0;
+                overflow: hidden;
+           }
+           figure img {
+                width: 100%;
+                margin: -10% 0 0 0;
+           #glaw {
+               display:inline;
+               width:880px;
+           }
+           }
+           .blok1, .blok2 {
+                border-radius: 4px;
+                box-shadow: rgba(0,0,0,1.2) 0px 1px 3px;
+           }
+           .blok1 {
+              float:left;
+              width:600px;
+              height:660px;
+              padding: 5px;
+              text-align: center;
+              vertical-align: middle;
+          }
+          .blok2 {
+              vertical-align: middle;
+              float:right;
+              width:600px;
+              height:660px;
+              padding: 5px;
+              text-align: center;
+          }
+        </style>
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <div id="glaw">
+            <div class="blok1">
+                <h1>
+                    <p align="center" style="color:red; font-size:30px">
+                    {{ blog.title }}
+                </h1>
+                    <div align="right">
+                    <figure>
+                        <p vertical-align="middle"></p>
+                        <img src="{{ blog.cover.url }}">
+                    </figure>
+                    </div>
+            </div>
+            <div class="blok2">
+                    <div align="left" style="color:black; font-size:20px">
+                        {{ blog.task }}
+                    </div>
+                    <p align="right" style="color:#DC143C; font-size:20px">
+                    Дата публикации: {{ blog.pub_date }}
+            </div><br>
+                <h3>
+                    <p align="center" style="margin-top: 640px">
+                    <button class="btn btn-info" style="width:350px" onclick="document.location='../'">Назад</button>
+                    <button class="btn btn-warning" style="width:350px" onclick="document.location='update'">Редактировать</button>
+                    <button class="btn btn-danger" style="width:350px" onclick="document.location='delete'">Удалить</button>
+                </h3>
+        </div>
+{% endblock %}
